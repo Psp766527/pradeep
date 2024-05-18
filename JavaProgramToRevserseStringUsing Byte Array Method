@@ -1,0 +1,41 @@
+package com.azoop.reverse.string;
+
+/**
+ * 
+ * @author Pradeep Kushwah
+ * 
+ *         The StringReverseDemo class will be show casing the how to reverse a
+ *         string.
+ * 
+ *         Approach -1
+ */
+public class StringReverseDemo {
+
+	public static void main(String[] args) {
+
+		// This local variable whose scope is only accessible inside the block only.
+		String str = "Pradeep Kushwah";
+
+		System.out.println("String before reverse :: " + str);
+
+		byte[] strByteArray = str.getBytes();
+		// [P,r,a,d,e,e,p ........]
+
+		// We are declearing new array to store reversed order or our strByteArray.
+		byte[] reversedByteArray = new byte[strByteArray.length];
+
+		// We are iteratting our strByteArray's elements one by one and will store them
+		// in our new array which is reversedByteArray
+
+		// reversedByteArray[i] = strByteArray [strByteArray.length-i-1]
+		for (int i = 0; i < strByteArray.length; i++) {
+
+			reversedByteArray[i] = strByteArray[strByteArray.length - i - 1];
+		}
+
+		String reversedString = new String(reversedByteArray);
+
+		System.out.println("The Reversed String would be :: " + reversedString);
+
+	}
+}
